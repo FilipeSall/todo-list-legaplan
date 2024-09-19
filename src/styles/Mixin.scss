@@ -1,0 +1,17 @@
+@mixin mediaCell() {
+    @media screen and (max-width: 678px) {
+        @content;
+    }
+}
+
+@mixin mediatablet() {
+    @media screen and (min-width: 680px) and (max-width: 999px) {
+        @content;
+    }
+}
+
+@mixin laptopMedium() {
+    @media screen and (min-width: 1000px) and (max-width: 1400px) {
+        @content;
+    }
+}

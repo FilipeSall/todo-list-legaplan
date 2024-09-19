@@ -1,0 +1,28 @@
+@import '../../styles/variables.scss';
+@import '../../styles/Mixin.scss';
+
+.header{
+    border-bottom: 1px solid $headerBorder;
+    width: 90%;
+    height: 60px;
+    margin:24px 56px;
+    padding: 0 0 24px 0;
+    display: flex;
+}
+
+.headerWrapper{
+    width: 100%;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.headerWrapper > h1 {
+    font-size: 24px;
+    width: 33%;
+    font-weight: 500;
+    color: $titleTxt;
+    text-align: right;
+}
