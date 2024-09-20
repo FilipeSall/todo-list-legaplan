@@ -1,7 +1,7 @@
+"use client"
 import { useState, useEffect } from 'react';
 
 function useLocalStorage<T>(key: string, initialValue: T) {
-    // Função para obter o valor do localStorage ou retornar o valor inicial
     const getStoredValue = () => {
         try {
             const item = window.localStorage.getItem(key);
@@ -14,7 +14,6 @@ function useLocalStorage<T>(key: string, initialValue: T) {
 
     const [storedValue, setStoredValue] = useState<T>(getStoredValue);
 
-    // Efeito para atualizar o localStorage quando o valor mudar
     useEffect(() => {
         try {
             window.localStorage.setItem(key, JSON.stringify(storedValue));

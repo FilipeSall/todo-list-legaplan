@@ -8,6 +8,10 @@
     margin:24px 56px 0 56px;
     padding: 0 0 24px 0;
     display: flex;
+    @include mediaCell{
+        height: 114px;
+        flex-direction: column;
+    }
 }
 
 .headerWrapper{
@@ -17,6 +21,9 @@
     align-items: center;
     flex-wrap: wrap;
     justify-content: space-between;
+    @include mediaCell{
+        height: 90px;
+    }
 }
 
 .headerWrapper > h1 {
@@ -25,4 +32,14 @@
     font-weight: 500;
     color: $titleTxt;
     text-align: right;
+
+    @include mediatablet{
+        font-size:18px
+    }
+
+    @include mediaCell{
+        width: 100%;
+        text-align: left;
+        font-size: 16px;
+    }
 }

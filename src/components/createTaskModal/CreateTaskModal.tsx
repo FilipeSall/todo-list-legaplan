@@ -19,7 +19,7 @@ function CreateTaskModal() {
             <div className={styles.overlay} onClick={toggleModal}></div>
             <form onSubmit={handleAddTask} className={styles.addTodoForm}>
                 <h1 className={styles.newTaskTitle}>Nova Tarefa</h1>
-                <form className={styles.form}>
+                <div className={styles.form}>
                     <label className={styles.label} htmlFor='newTask'>Titulo</label>
                     <input
                         type="text"
@@ -29,7 +29,7 @@ function CreateTaskModal() {
                         id='newTask'
                         placeholder='Digite'
                     />
-                </form>
+                </div>
                 <div className={styles.btWrapper}>
                     <button onClick={toggleModal} className={styles.cancelBtn}>
                         Cancelar

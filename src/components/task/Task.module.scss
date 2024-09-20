@@ -12,7 +12,7 @@
 }
 
 .container:hover{
-    cursor: pointer;
+    cursor: grab;
     background-color: $hover;
     transition: .3s ease-in-out;
 }

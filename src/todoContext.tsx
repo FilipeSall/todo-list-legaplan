@@ -1,4 +1,4 @@
-// src/context/AppContext.tsx
+"use client"
 import React, { createContext, ReactNode, useContext, useState } from 'react';
 import { TodoProps } from '@/interfaces';
 import initialTodos from '@/components/todo/initialTodos';
@@ -11,15 +11,20 @@ interface AppContextType {
     toggleCompleteTask: (task: string) => void;
     isModalOpen: boolean;
     toggleModal: () => void;
+    isDeleteModalOpen: boolean;  
+    toggleDeleteModal: (task?: string) => void; 
+    taskToDelete: string | null;  
 }
 
 const AppContext = createContext<AppContextType | undefined>(undefined);
 
 export const AppProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
-    
     const [todos, setTodos] = useLocalStorage<TodoProps[]>('todos', initialTodos);
     const [isModalOpen, setIsModalOpen] = useState(false);
+    const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);  
+    const [taskToDelete, setTaskToDelete] = useState<string | null>(null); 
 
+    // Função para adicionar nova tarefa
     const addTask = (task: string) => {
         if (task.trim() === '') return;
         setTodos(prevTodos => [
@@ -28,10 +33,18 @@ export const AppProvider: React.FC<{ children: ReactNode }> = ({ children }) => 
         ]);
     };
 
+    //função para remover a task
     const removeTask = (task: string) => {
-        setTodos(prevTodos => prevTodos.filter(todo => todo.task !== task));
+        setTodos(prevTodos => {
+            const updatedTodos = prevTodos.filter(todo => todo.task !== task);
+
+            window.localStorage.setItem('todos', JSON.stringify(updatedTodos));
+            return updatedTodos; 
+        });
+        setIsDeleteModalOpen(false); 
     };
 
+    // Função para alternar o estado de conclusão da tarefa
     const toggleCompleteTask = (task: string) => {
         setTodos(prevTodos =>
             prevTodos.map(todo =>
@@ -42,12 +55,29 @@ export const AppProvider: React.FC<{ children: ReactNode }> = ({ children }) => 
         );
     };
 
+    // Função para abrir/fechar o modal de adição de tarefas
     const toggleModal = () => {
         setIsModalOpen(!isModalOpen);
     };
 
+    // Função para abrir/fechar o modal de exclusão e definir a tarefa a ser excluída
+    const toggleDeleteModal = (task?: string) => {
+        setTaskToDelete(task || null); 
+        setIsDeleteModalOpen(prev => !prev); 
+    };
+
     return (
-        <AppContext.Provider value={{ todos, addTask, removeTask, toggleCompleteTask, isModalOpen, toggleModal }}>
+        <AppContext.Provider value={{
+            todos,
+            addTask,
+            removeTask,
+            toggleCompleteTask,
+            isModalOpen,
+            toggleModal,
+            isDeleteModalOpen,
+            toggleDeleteModal,
+            taskToDelete
+        }}>
             {children}
         </AppContext.Provider>
     );

@@ -1,0 +1,67 @@
+@import '../../styles/variables.scss';
+@import '../../styles/Mixin.scss';
+
+
+.container{
+    width:450px;
+    height: 232px;
+    position:absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%, -50%);   
+    background-color: $background;
+    box-shadow: 0 24px 48px -12px #1018282E;
+    display: flex;
+    flex-direction: column;
+    border-radius: 16px;
+    padding: 32px;
+    justify-content: space-between;
+    z-index: 1001;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 0.5); 
+    backdrop-filter: blur(5px); 
+    z-index: 1000; 
+}
+
+.title{
+    color: #000000;
+    font-size: 24px;
+}
+
+.text{
+    color: #0000008A;
+    font-size: 16px;
+}
+
+.btnWrapper{
+    width: 100%;
+    height: 51px;
+    gap: 16px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.cancelBtn, .deleteBtn{
+    width: 45%;
+    padding: 16px, 24px, 16px, 24px;
+    cursor: pointer;
+    border: none;
+    border-radius: 8px;
+}
+
+.cancelBtn{
+    background-color: #E7EEFB;
+    color: #000000;
+}
+
+.deleteBtn{
+    background-image: linear-gradient(to right, #D30707, #F05353);
+    color: #FFFFFF;
+}

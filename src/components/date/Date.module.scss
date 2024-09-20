@@ -1,13 +1,21 @@
 @import '../../styles/variables.scss';
+@import '../../styles/Mixin.scss';
 
 .container{
     width: 22%;
     text-align: right;
+    @include mediaCell{
+        width: 100%;
+        text-align: left;
+    }
 }
 
 .container > p {
     font-size: 16px;
     color: $normalTxt;
+    @include mediatablet{
+        font-size: 12px;
+    }
 }
 
 .container::first-letter {

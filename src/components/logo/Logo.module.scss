@@ -1,3 +1,5 @@
+@import '../../styles/Mixin.scss';
+
 .container{
     display: flex;
     align-items: center;
@@ -5,4 +7,7 @@
     width: 150px;
     height: 36px;
     gap: 10.44px;
+    @include mediaCell{
+        width: 100%;
+    }
 }
