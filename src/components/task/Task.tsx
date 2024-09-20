@@ -22,8 +22,9 @@ const Task: React.FC<TaskProps> = ({ task, isCompleted, onComplete }) => {
             </div>
             <button
                 type="button"
-                onClick={() => {
+                onClick={(e) => {
                     toggleDeleteModal(task);
+                    e.stopPropagation();
                 }}
                 className={styles.taskRemoveButton}
             >
