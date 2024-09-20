@@ -3,7 +3,7 @@ import styles from './Task.module.scss';
 import trash from '../../assets/trash.svg';
 import Image from 'next/image';
 import completedImg from '../../assets/Checkbox.svg';
-import incompletedImg from '../../assets/uncheck.svg';
+import incompletedImg from '../../assets/Uncheck.svg';
 import { useAppContext } from '@/todoContext';
 
 const Task: React.FC<TaskProps> = ({ task, isCompleted, onComplete }) => {
