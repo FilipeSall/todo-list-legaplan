@@ -10,6 +10,6 @@ Este projeto foi desenvolvido como parte do processo seletivo da Legaplan. É um
 - **useContext**: Hook do React para gerenciamento de estados globais, permitindo compartilhar dados entre componentes sem a necessidade de props drilling.
 - **LocalStorage**: API do navegador utilizada para armazenar dados de forma persistente, garantindo que as tarefas sejam salvas mesmo após o fechamento do navegador.
 - **SCSS**: Pré-processador CSS utilizado para estilização, oferecendo recursos como variáveis, aninhamento e mixins.
-- **Magic Motion**: Biblioteca utilizada para criar animações suaves e envolventes.
+- **Magic Motion**: Biblioteca utilizada para criar animações suaves.
 - **CSS Keyframes**: Técnica utilizada para implementar animações personalizadas.
 - **Favicon Único**: O projeto inclui um favicon personalizado para uma identidade visual distinta.

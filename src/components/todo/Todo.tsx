@@ -1,4 +1,3 @@
-// src/components/todo/Todo.tsx
 import React from 'react';
 import { useAppContext } from '../../todoContext';
 import styles from './Todo.module.scss';

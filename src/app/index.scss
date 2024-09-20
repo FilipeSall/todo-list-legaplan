@@ -9,7 +9,7 @@
     width: 100vw;
     height: 100vh;
     @include mediaCell{
-        padding: 14px;
+        padding: 0;
         overflow: hidden;
     }
 }
