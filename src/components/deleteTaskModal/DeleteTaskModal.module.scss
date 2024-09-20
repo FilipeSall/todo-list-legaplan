@@ -17,6 +17,7 @@
     padding: 32px;
     justify-content: space-between;
     z-index: 1001;
+    animation: show .3s ease-in-out forwards;
     @include mediaCell{
         width: 100vw;
         height: 100vh;
@@ -74,4 +75,13 @@
 .deleteBtn{
     background-image: linear-gradient(to right, #D30707, #F05353);
     color: #FFFFFF;
+}
+
+@keyframes show {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
 }

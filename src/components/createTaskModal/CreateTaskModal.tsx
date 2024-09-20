@@ -3,7 +3,7 @@ import styles from './CreateTaskModal.module.scss';
 import { useAppContext } from '@/todoContext';
 
 function CreateTaskModal() {
-    const { addTask, toggleModal, isModalOpen } = useAppContext();
+    const { addTask, toggleModal } = useAppContext();
     const [newTask, setNewTask] = useState<string>('');
 
     const handleAddTask = (event: React.FormEvent) => {

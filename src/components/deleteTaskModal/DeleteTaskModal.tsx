@@ -1,4 +1,3 @@
-// @ts-nocheck
 import { useAppContext } from '@/todoContext';
 import styles from './DeleteTaskModal.module.scss';
 
@@ -9,7 +8,7 @@ function DeleteTaskModal() {
 
     const handleDelete = () => {
         console.log(taskToDelete)
-        removeTask(taskToDelete);
+        if(taskToDelete)removeTask(taskToDelete);
     };
 
     return (

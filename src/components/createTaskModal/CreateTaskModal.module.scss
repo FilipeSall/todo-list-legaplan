@@ -17,6 +17,7 @@
     padding: 32px;
     justify-content: space-between;
     z-index: 1001;
+    animation: show .3s ease-in-out forwards;
     @include mediaCell{
         width: 100vw;
         height: 100vh;
@@ -89,4 +90,13 @@
 .addButton{
     background-image: linear-gradient(to right, #0796D3, #53C0F0);
     color: #FFFFFF;
+}
+
+@keyframes show {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
 }
