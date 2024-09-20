@@ -7,18 +7,21 @@ function DeleteTaskModal() {
     if (!isDeleteModalOpen) return null;
 
     const handleDelete = () => {
-        console.log(taskToDelete)
-        if(taskToDelete)removeTask(taskToDelete);
+        
+        if(taskToDelete) removeTask(taskToDelete);
     };
 
     return (
         <>
-            <div className={styles.overlay} onClick={toggleDeleteModal} />
+            <div className={styles.overlay} onClick={() => toggleDeleteModal(undefined)} />
             <div className={styles.container}>
                 <h1 className={styles.title}>Deletar tarefa</h1>
                 <p className={styles.text}>Tem certeza que quer deletar essa tarefa?</p>
                 <div className={styles.btnWrapper}>
-                    <button type="button" onClick={toggleDeleteModal} className={styles.cancelBtn}>
+                <button 
+                        className={styles.cancelBtn}
+                        onClick={() => toggleDeleteModal(undefined)} 
+                    >
                         Cancelar
                     </button>
                     <button type="button" onClick={handleDelete} className={styles.deleteBtn}>
