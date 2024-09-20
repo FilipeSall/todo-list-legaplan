@@ -1,5 +1,6 @@
 @import '../styles/reset.css';
 @import '../styles/variables.scss';
+@import '../styles/Mixin.scss';
 
 .content__wrapper{
     display: flex;
@@ -7,5 +8,9 @@
     flex-direction: column;
     width: 100vw;
     height: 100vh;
+    @include mediaCell{
+        padding: 14px;
+        overflow: hidden;
+    }
 }
 

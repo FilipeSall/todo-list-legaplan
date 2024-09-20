@@ -9,6 +9,9 @@
     justify-content: space-between;
     padding: 16px;
     height: 56px;
+    @include mediaCell{
+        height: 56px;
+    }
 }
 
 .container:hover{

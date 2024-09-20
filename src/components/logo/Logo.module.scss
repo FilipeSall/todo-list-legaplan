@@ -9,5 +9,6 @@
     gap: 10.44px;
     @include mediaCell{
         width: 100%;
+        justify-content: start;
     }
 }
