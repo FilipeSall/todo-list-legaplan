@@ -1,4 +1,5 @@
-# To-Do List todo-list-legaplan-jpgf-oo1x2lfwb.vercel.app
+# To-Do List 
+A aplicação está disponível online em: https://todo-list-legaplan-jpgf.vercel.app/
 
 Este projeto foi desenvolvido como parte do processo seletivo da Legaplan. É uma aplicação de lista de tarefas (To-Do List) que permite aos usuários gerenciar suas tarefas diárias de forma simples e eficiente.
 
