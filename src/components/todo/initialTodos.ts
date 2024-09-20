@@ -12,7 +12,7 @@ const initialTodos = [
         isCompleted:false,
     },
     {
-        task:'Levar o lixo para a fora',
+        task:'Levar o lixo para fora',
         isCompleted:true,
     },
 ]
