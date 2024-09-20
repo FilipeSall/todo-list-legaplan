@@ -1,4 +1,3 @@
-// @ts-nocheck
 import { useAppContext } from '@/todoContext';
 import styles from './DeleteTaskModal.module.scss';
 
