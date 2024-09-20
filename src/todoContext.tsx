@@ -1,20 +1,24 @@
-"use client"
+// src/context/AppContext.tsx
 import React, { createContext, ReactNode, useContext, useState } from 'react';
 import { TodoProps } from '@/interfaces';
 import initialTodos from '@/components/todo/initialTodos';
+import useLocalStorage from '@/hooks/useLocalStorage';
 
 interface AppContextType {
     todos: TodoProps[];
     addTask: (task: string) => void;
     removeTask: (task: string) => void;
     toggleCompleteTask: (task: string) => void;
-    
+    isModalOpen: boolean;
+    toggleModal: () => void;
 }
 
 const AppContext = createContext<AppContextType | undefined>(undefined);
 
 export const AppProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
-    const [todos, setTodos] = useState<TodoProps[]>(initialTodos);
+    
+    const [todos, setTodos] = useLocalStorage<TodoProps[]>('todos', initialTodos);
+    const [isModalOpen, setIsModalOpen] = useState(false);
 
     const addTask = (task: string) => {
         if (task.trim() === '') return;
@@ -38,8 +42,12 @@ export const AppProvider: React.FC<{ children: ReactNode }> = ({ children }) => 
         );
     };
 
+    const toggleModal = () => {
+        setIsModalOpen(!isModalOpen);
+    };
+
     return (
-        <AppContext.Provider value={{ todos, addTask, removeTask, toggleCompleteTask }}>
+        <AppContext.Provider value={{ todos, addTask, removeTask, toggleCompleteTask, isModalOpen, toggleModal }}>
             {children}
         </AppContext.Provider>
     );

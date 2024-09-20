@@ -2,15 +2,17 @@ import styles from './TodoWrapper.module.scss'
 import Todo from '../todo/Todo'
 import AddBtn from '../addTaskBtn/AddBtn'
 import { useAppContext } from '@/todoContext'
+import CreateTaskModal from '../createTaskModal/CreateTaskModal';
 
 function TodoWrapper() {
 
-    const {  } = useAppContext();
+    const { isModalOpen, toggleModal } = useAppContext();
 
     return (
         <div className={styles.todoWrapper}>
             <Todo />
-            <AddBtn />
+            <AddBtn onClick={toggleModal} />
+            {isModalOpen && <CreateTaskModal />}
         </div>
     )
 }

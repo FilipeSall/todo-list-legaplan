@@ -9,5 +9,5 @@ export interface TaskProps extends TodoProps {
 }
 
 export interface AddBtnProps {
-    setModal:() => void;
+    onClick:() => void;
 }
