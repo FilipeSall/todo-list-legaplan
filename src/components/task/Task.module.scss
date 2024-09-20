@@ -1,0 +1,46 @@
+@import '../../styles/variables.scss';
+@import '../../styles/Mixin.scss';
+
+.container{
+    width: 80%;
+    border: 1px dashed #D7DDE9;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    padding: 16px;
+    height: 56px;
+}
+
+.container:hover{
+    cursor: pointer;
+    background-color: $hover;
+    transition: .3s ease-in-out;
+}
+
+.wrapper{
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+}
+
+.taskCheckbox{
+    width: 24px;
+    height: 24px;
+    border: 1px solid #B0BBD1;
+    
+}
+
+.taskCompleted{
+    text-decoration: line-through;
+    color:#0000008A;
+}
+
+.taskRemoveButton{
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: inherit;
+}
+

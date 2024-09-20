@@ -1,0 +1,14 @@
+@import '../../styles/variables.scss';
+@import '../../styles/Mixin.scss';
+
+.btn{
+    width: 450px;
+    height: 51px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    background-image: linear-gradient(to right, $addBtn1, $addBtn2);
+    color: $background;
+    font-size: 16px;
+    font-weight: 500;
+}
