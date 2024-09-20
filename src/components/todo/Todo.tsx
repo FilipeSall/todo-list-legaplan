@@ -1,5 +1,5 @@
 // src/components/todo/Todo.tsx
-import React, { useState } from 'react';
+import React from 'react';
 import { useAppContext } from '../../todoContext';
 import styles from './Todo.module.scss';
 import Task from '../task/Task';
